@@ -1,3 +1,5 @@
+[![Latest Release](https://img.shields.io/github/v/release/Kaillr/py-search-engine)](https://github.com/Kaillr/py-search-engine/releases/latest)
+[![CodeFactor](https://www.codefactor.io/repository/github/kaillr/py-search-engine/badge)](https://www.codefactor.io/repository/github/kaillr/py-search-engine)
 
 # Python Search Engine
 
