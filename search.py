@@ -10,10 +10,9 @@ def search(search_query):
     data = [Path(file).read_text() for file in data_file_paths]
 
     # Iterate through data with enumerate for index and row
-    for index, row in enumerate(data):
-        print(data)
-        if search_query in row:
-            words = row.lower().split()
+    for index, file in enumerate(data):
+        if search_query in file:
+            words = file.lower().split()
             words_match_query = words.count(search_query)  # Count matches directly
             print(words_match_query, "matches found in file", data_file_paths[index])
 
