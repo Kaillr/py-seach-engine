@@ -14,19 +14,20 @@ def search(search_query):
     found_any = False # Track if any matches were found
     for index, file in enumerate(data): # Track the index and value in data
         if search_query in file.lower():
-            found_any = True # Set to True if any matches were found
             words = file.lower().split()
             words_match_query = words.count(search_query) # Count matches directly
             if words_match_query > 0:
+                found_any = True # Set to True if any matches were found
                 print(words_match_query, "matches found in file", data_file_paths[index])
             
     if found_any:
         user_input = input("Want to show location of words in files? (Y/n): ")
         if user_input.lower() == "y":
             show_location(search_query)
-        return
     else: 
         print("No results found for:", search_query)
+    enter_to_continue()
+    
         
 def show_location(search_query): # Function to show location of words in files
     for index, file in enumerate(data): # Track the index and value in data
@@ -37,7 +38,6 @@ def show_location(search_query): # Function to show location of words in files
                 words_match_query = words.count(search_query) # Count how many words match search query in line
                 if words_match_query > 0:
                     print(f"For file: {data_file_paths[index].name}, '{search_query}' found in Ln {line_num}") # prints the file and line where the search query is found
-    enter_to_continue()
 
 
 def clear(): # Clear console function
@@ -47,7 +47,7 @@ def clear(): # Clear console function
 
 
 def enter_to_continue(): # Pres enter to continue function
-    input("Press Enter to continue to search...")
+    input("Press Enter to continue to search... ")
 
 
 while True:
